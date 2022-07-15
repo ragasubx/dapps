@@ -7,6 +7,14 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WalletStyles.title(context, "Settings");
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        WalletStyles.title(context, "Settings"),
+        Expanded(child: Container())
+      ],
+    );
   }
 }

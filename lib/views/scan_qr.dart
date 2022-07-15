@@ -42,10 +42,13 @@ class ScanQR extends StatelessWidget {
                   ),
                 ),
               ),
-              Text("or").padding(all: 16),
+              const Text("or").padding(all: 16),
               TextField(
-                decoration: InputDecoration(hintText: "Input your code here"),
-              ).padding(all: 16)
+                decoration: InputDecoration(
+                    hintText: "Input your code here",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(14))),
+              ).padding(vertical: 16, horizontal: 32)
             ],
           ),
         )

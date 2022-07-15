@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           Text(
             "Wallet",
-            style: GoogleFonts.barlow(color: Colors.white),
+            style: GoogleFonts.cabin(color: Colors.white),
           )
         ],
       )),
