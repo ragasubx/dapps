@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:crypto_font_icons/crypto_font_icons.dart';
 import 'package:dapps/styles/colors.dart';
 import 'package:dapps/styles/main.dart';
@@ -22,13 +23,21 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: WalletNavigationBar(_currentTab, (int index) {
-          setState(() {
-            _currentTab = index;
-          });
-        }),
-        body: SafeArea(
-          child: [Accounts(), ScanQR(), Settings()][_currentTab],
-        ));
+      bottomNavigationBar: WalletNavigationBar(_currentTab, (int index) {
+        setState(() {
+          _currentTab = index;
+        });
+      }),
+      body: SafeArea(
+          child: PageTransitionSwitcher(
+        transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
+            FadeThroughTransition(
+          animation: primaryAnimation,
+          secondaryAnimation: secondaryAnimation,
+          child: child,
+        ),
+        child: [Accounts(), ScanQR(), Settings()][_currentTab],
+      )),
+    );
   }
 }

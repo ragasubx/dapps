@@ -38,6 +38,8 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_displaymode: ^0.4.0
   crypto_font_icons: ^1.0.1
+  animations: ^2.0.3
+  mobile_scanner: ^2.0.0
 
 dev_dependencies:
   flutter_test:

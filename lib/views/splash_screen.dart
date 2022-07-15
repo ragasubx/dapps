@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (Platform.isAndroid) FlutterDisplayMode.setHighRefreshRate();
-      await Future.delayed(const Duration(seconds: 5),
+      await Future.delayed(const Duration(seconds: 1),
           () => {Navigator.pushReplacementNamed(context, "/home")});
     });
   }
