@@ -18,9 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      /** Enable High Refresh Rate */
       if (Platform.isAndroid) FlutterDisplayMode.setHighRefreshRate();
       await Future.delayed(const Duration(seconds: 1),
-          () => {Navigator.pushReplacementNamed(context, "/home")});
+          () => {Navigator.pushReplacementNamed(context, '/home')});
     });
   }
 
@@ -39,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
           ),
           Text(
-            "Wallet",
+            'Wallet',
             style: GoogleFonts.cabin(color: Colors.white),
           )
         ],

@@ -26,7 +26,7 @@ class Wallet {
 
     final address = await random.extractAddress();
 
-    await store.add(db, {'pk': random.toString(), 'hexAddr': address.hex});
+    await store.add(db, {'hexAddr': address.hex});
 
     return address.hex;
   }

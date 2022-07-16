@@ -22,21 +22,24 @@ class WalletStyles {
     ).padding(all: 16);
   }
 
-  static Widget dialogTitle(BuildContext ctx, String text) {
+  static Widget dialogTitle(BuildContext ctx, String text, {double? fontSize}) {
     return Text(
       text,
       style: GoogleFonts.josefinSans(),
-    ).fontWeight(FontWeight.w600).textColor(WalletColors.fifthColor);
+    )
+        .fontWeight(FontWeight.w600)
+        .textColor(WalletColors.fifthColor)
+        .fontSize(fontSize);
   }
 
   static Widget subtitle(BuildContext ctx, String text,
-      {TextAlign textAlign = TextAlign.start}) {
+      {TextAlign textAlign = TextAlign.start, double? padding = 16}) {
     return Text(
       text,
     )
         .textAlignment(textAlign)
         .textColor(WalletColors.secondaryColor)
-        .padding(all: 16);
+        .padding(all: padding);
   }
 
   static Widget primaryButton(BuildContext ctx, String text, onPress) {
@@ -54,7 +57,8 @@ class WalletStyles {
         ).textColor(WalletColors.palleteColor).fontWeight(FontWeight.w500));
   }
 
-  static Widget primaryButtonBox(BuildContext ctx, String text, onPress) {
+  static Widget primaryButtonBox(BuildContext ctx,
+      {String text = '', void Function()? onPress}) {
     return TextButton(
         onPressed: onPress,
         style: ButtonStyle(
@@ -69,7 +73,26 @@ class WalletStyles {
         ).textColor(WalletColors.palleteColor).fontWeight(FontWeight.w500));
   }
 
-  static Widget secondaryButtonBox(BuildContext ctx, String text, onPress) {
+  static Widget primaryButtonBoxFilled(BuildContext ctx,
+      {String text = '', void Function()? onPress}) {
+    return TextButton(
+        onPressed: onPress,
+        style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(WalletColors.palleteColor),
+            padding: MaterialStateProperty.all<EdgeInsets>(
+                const EdgeInsets.symmetric(vertical: 8, horizontal: 20)),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0),
+                    side: const BorderSide(color: WalletColors.palleteColor)))),
+        child: Text(
+          text,
+        ).textColor(WalletColors.accentColor).fontWeight(FontWeight.w500));
+  }
+
+  static Widget secondaryButtonBox(BuildContext ctx,
+      {String text = '', onPress}) {
     return TextButton(
         onPressed: onPress,
         style: ButtonStyle(

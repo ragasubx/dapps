@@ -17,13 +17,18 @@ class WalletNavigationBar extends StatelessWidget {
       },
       backgroundColor: WalletColors.secondaryColor,
       destinations: const [
-        NavigationDestination(icon: Icon(Icons.list), label: 'Accounts'),
         NavigationDestination(
-          icon: Icon(Icons.qr_code),
+            selectedIcon: Icon(Icons.list),
+            icon: Icon(Icons.list_outlined),
+            label: 'Accounts'),
+        NavigationDestination(
+          selectedIcon: Icon(Icons.qr_code),
+          icon: Icon(Icons.qr_code_outlined),
           label: 'Pair',
         ),
         NavigationDestination(
-          icon: Icon(Icons.settings),
+          selectedIcon: Icon(Icons.settings),
+          icon: Icon(Icons.settings_outlined),
           label: 'Settings',
         ),
       ],

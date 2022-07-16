@@ -1,5 +1,3 @@
-import 'package:dapps/views/scan_qr.dart';
-import 'package:dapps/views/settings.dart';
 import 'package:dapps/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dapps/views/home.dart';
@@ -21,10 +19,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           platform: TargetPlatform.iOS,
           fontFamily: GoogleFonts.cabin().fontFamily),
-      initialRoute: "/",
+      initialRoute: '/',
       routes: {
-        "/": (ctx) => const SplashScreen(),
-        "/home": (ctx) => const Home(),
+        '/': (ctx) => const SplashScreen(),
+        '/home': (ctx) => const Home(),
       },
     );
   }
